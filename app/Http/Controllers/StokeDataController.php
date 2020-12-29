@@ -12,6 +12,10 @@ use App\Imports\StokeDataImport;
 
 class StokeDataController extends Controller
 {
+  public function chartview()
+  {
+    return view('chartview');
+  }
   public function importForm()
   {
     return view('import_form');

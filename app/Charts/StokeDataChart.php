@@ -19,7 +19,7 @@ class StokeDataChart extends BaseChart
     {
         return Chartisan::build()
             ->labels(['First', 'Second', 'Third'])
-            ->dataset('Sample', [1, 2, 3])
-            ->dataset('Sample 2', [3, 2, 1]);
+            ->dataset('line', [1, 2, 3])
+            ->dataset('bar', [3, 2, 1]);
     }
 }

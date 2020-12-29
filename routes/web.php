@@ -22,3 +22,5 @@ Route::post('/store', [StokeDataController::class, 'store'])->name('store');
 Route::get('/edit/{id}', [StokeDataController::class, 'edit'])->name('edit');
 Route::post('/update/{id}', [StokeDataController::class, 'update'])->name('update');
 Route::post('/delete/{id}', [StokeDataController::class, 'delete'])->name('delete');
+
+Route::get('/chart', [StokeDataController::class, 'chartview'])->name('chartview');
