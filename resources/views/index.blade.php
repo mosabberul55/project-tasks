@@ -32,35 +32,29 @@
         <td>{{ $Stock_data->close }}</td>
         <td>{{ $Stock_data->volume }}</td>
         <td>
-          <a href="{!! route('edit', $Stock_data->id) !!}" class="btn btn-warning">Edit</a>
-          <a href="#deleteModal{{ $Stock_data->id }}" data-toggle="modal" class="btn btn-danger">Delete</a>
+          <a href="{!! route('edit', $Stock_data->id) !!}" class="btn btn-warning d-inline-block mr-2">Edit</a>
+          <form class="form-inline  d-inline-block" action="{{ route('delete', $Stock_data->id) }}" method="post">
+            @csrf
+            <input type="button" class="btn btn-danger" name="" value="Delete"  data-toggle="modal" data-target="#modal1">
+            <div id="modal1" class="modal">
+<div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-body">
+      Are you Sure Want to delete this?
+      <button type="button" class="close" data-dismiss="modal" name="button">&times;</button>
+    </div>
+      <div class="modal-footer">
+        <input type="submit" class="btn btn-warning" name="" value="Delete">
+        <button type="button" class="btn btn-danger" name="button" data-dismiss="modal">Close</button>
+      </div>
+
+
+  </div>
+</div>
+</div>
+          </form>
         </td>
       </tr>
     @endforeach
   </table>
 @endsection
-
-<!-- Delete Modal -->
-<div class="modal" id="deleteModal{{ $Stock_data->id }}"  tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title text-dark" id="exampleModalLabel">Are You sure to delete?</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <form action="{!! route('delete', $Stock_data->id) !!}"  method="post">
-          @csrf
-          <button type="submit" class="btn btn-danger text-light">Permanent Delete</button>
-        </form>
-
-      </div>
-      <div class="modal-footer">
-
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-      </div>
-    </div>
-  </div>
-</div>
