@@ -15,6 +15,13 @@ class CreateStokeDataTable extends Migration
     {
         Schema::create('stoke_data', function (Blueprint $table) {
             $table->id();
+            $table->date('date');
+            $table->string('trade_code');
+            $table->float('high');
+            $table->float('low');
+            $table->float('open');
+            $table->float('close');
+            $table->string('volume');
             $table->timestamps();
         });
     }

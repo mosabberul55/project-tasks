@@ -1,12 +1,10 @@
 @extends('master')
 @section('content')
-  <form class="" action="{!! route('store') !!}" method="post">
+  <form class="pb-5" action="{!! route('store') !!}" method="post">
     @include('alerts')
     @csrf
-  <div class="row">
-    <div class="col-md-6">
       <div class="form-group">
-        <label for="date">date</label>
+        <label for="date">Date</label>
         <input type="date" name="date" class="form-control" id="date">
       </div>
       <div class="form-group">
@@ -21,8 +19,6 @@
         <label for="low">Low</label>
         <input type="number" name="low" class="form-control" id="low">
       </div>
-    </div>
-    <div class="col-md-6">
       <div class="form-group">
         <label for="open">Open</label>
         <input type="number" name="open" class="form-control" id="open">
@@ -35,8 +31,7 @@
         <label for="volume">Volume</label>
         <input type="text" name="volume" class="form-control" id="volume">
       </div>
-    </div>
-  </div>
+
 
   <button type="submit" class="btn btn-primary btn-block w-25 mx-auto">Submit</button>
 </form>

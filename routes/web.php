@@ -13,7 +13,10 @@ use App\Http\Controllers\StokeDataController;
 |
 */
 
-Route::get('/', [StokeDataController::class, 'index'])->name('index');
+Route::get('/index', [StokeDataController::class, 'index'])->name('index');
+Route::get('/', [StokeDataController::class, 'importForm'])->name('importForm');
+Route::post('/import', [StokeDataController::class, 'importCSV'])->name('import.CSV');
+Route::get('/migrate-json', [StokeDataController::class, 'migrating_JSON'])->name('migrating_JSON');
 Route::get('/create', [StokeDataController::class, 'create'])->name('create');
 Route::post('/store', [StokeDataController::class, 'store'])->name('store');
 Route::get('/edit/{id}', [StokeDataController::class, 'edit'])->name('edit');
