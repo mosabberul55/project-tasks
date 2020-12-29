@@ -1,0 +1,29 @@
+[
+    {
+        "date": "2020-08-10",
+        "trade_code": "1JANATAMF sdsdgds6464",
+        "high": "4.3",
+        "low": "4.5768",
+        "open": "4.2",
+        "close": "4.1",
+        "volume": "2423"
+    },
+    {
+        "date": "2020-08-09",
+        "trade_code": "1JANATAMFsdffdsfds",
+        "high": "4.3",
+        "low": "4.1",
+        "open": "4.1",
+        "close": "4.2",
+        "volume": "1,292,933"
+    },
+    {
+        "date": "2020-12-23",
+        "trade_code": "1STPRIMFMF",
+        "high": "2332",
+        "low": "213",
+        "open": "312",
+        "close": "321",
+        "volume": "321"
+    }
+]
