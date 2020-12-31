@@ -32,15 +32,14 @@ class StokeDataController extends Controller
   {
     return view('import_form');
   }
-  public function importCSV()
+  public function importCSV(Request $request)
   {
     ini_set("memory_limit","7G");
     ini_set('max_execution_time', '0');
     ini_set('max_input_time', '0');
     set_time_limit(0);
     ignore_user_abort(true);
-    $path = 'stock_market_data.csv';
-    Excel::import(new StokeDataImport, $path);
+    Excel::import(new StokeDataImport, $request->file);
     session()->flash('success', 'Imported successfully !!');
     return redirect()->route('index');
   }

@@ -24,6 +24,5 @@
       <a href="{!! route('index') !!}" class="btn btn-success">Home Page</a>
     </div>
   </div>
-  <a href="{{ route('import.CSV') }}">Import Csv</a>
   </div>
 @endsection
