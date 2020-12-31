@@ -21,7 +21,7 @@ class CreateStokeDataTable extends Migration
             $table->float('low');
             $table->float('open');
             $table->float('close');
-            $table->string('volume');
+            $table->double('volume');
             $table->timestamps();
         });
     }

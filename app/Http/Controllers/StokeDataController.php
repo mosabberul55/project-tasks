@@ -34,6 +34,9 @@ class StokeDataController extends Controller
   }
   public function importCSV(Request $request)
   {
+      $request->validate([
+        'file'  => 'required',
+      ]);
     ini_set("memory_limit","7G");
     ini_set('max_execution_time', '0');
     ini_set('max_input_time', '0');
@@ -60,8 +63,8 @@ class StokeDataController extends Controller
       'trade_code'         => 'required|max:150',
       'high'               => 'required',
       'low'               => 'required',
-      'open'               => 'required|numeric',
-      'close'              => 'required|numeric',
+      'open'               => 'required',
+      'close'              => 'required',
       'volume'             => 'required',
     ]);
     $stock_data = new StokeData;
@@ -88,8 +91,8 @@ class StokeDataController extends Controller
       'trade_code'         => 'required|max:150',
       'high'               => 'required',
       'low'               => 'required',
-      'open'               => 'required|numeric',
-      'close'              => 'required|numeric',
+      'open'               => 'required',
+      'close'              => 'required',
       'volume'             => 'required',
     ]);
     $stock_data = StokeData::find($id);
