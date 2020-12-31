@@ -13,19 +13,19 @@
       </div>
       <div class="form-group">
         <label for="high">High</label>
-        <input type="number" name="high" class="form-control" id="high" value="{{ $stock_data->high }}">
+        <input type="text" name="high" class="form-control" id="high" value="{{ $stock_data->high }}">
       </div>
       <div class="form-group">
         <label for="low">Low</label>
-        <input type="number" name="low" class="form-control" id="low" value="{{ $stock_data->low }}">
+        <input type="text" name="low" class="form-control" id="low" value="{{ $stock_data->low }}">
       </div>
       <div class="form-group">
         <label for="open">Open</label>
-        <input type="number" name="open" class="form-control" id="open" value="{{ $stock_data->open }}">
+        <input type="text" name="open" class="form-control" id="open" value="{{ $stock_data->open }}">
       </div>
       <div class="form-group">
         <label for="close">Close</label>
-        <input type="number" name="close" class="form-control" id="close" value="{{ $stock_data->close }}">
+        <input type="text" name="close" class="form-control" id="close" value="{{ $stock_data->close }}">
       </div>
       <div class="form-group">
         <label for="volume">Volume</label>
