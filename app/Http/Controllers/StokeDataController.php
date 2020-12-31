@@ -18,9 +18,7 @@ class StokeDataController extends Controller
     //dd($trade_code);
     return view('chartview',compact('trade_code'));
   }
-  public function test($trade_code){
-
-  
+  public function chart($trade_code){
     $high = StokeData::where('trade_code',$trade_code)->orderBy('date','ASC')->get(['high','low','date','open','close']);
     $data=[
       'high'=>$high->pluck('high')->toArray(),
@@ -47,8 +45,9 @@ class StokeDataController extends Controller
   }
   public function index()
   {
+    $trade_code=StokeData::select('trade_code')->distinct()->get();
     $data = StokeData::all();
-    return view('index', compact('data'));
+    return view('index', compact('data', 'trade_code'));
   }
   public function create()
   {

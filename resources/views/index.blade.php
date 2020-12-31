@@ -1,5 +1,50 @@
 @extends('master')
 @section('content')
+
+<section class="my-2">
+  <div class="my-2 py-5">
+    <div class="form-group">
+      <select name="code" id="code" class="form-control" onchange="getNewData()">
+        @foreach($trade_code as $code)
+          <option value="{{ $code->trade_code }}">{{ $code->trade_code }}</option>
+        @endforeach
+      </select>
+    </div>
+    <div class="py-12 mt-2">
+      <div id="chart" style="height: 300px;"></div>
+    </div>
+    @push('js')
+
+      <!-- Your application script -->
+      <script>
+      var tc =  $('#code').val();
+        const stokedatachart = new Chartisan({
+          el: '#chart',
+          url: "@chart('stoke_data_chart')"+"?trade_code="+tc,
+          hooks: new ChartisanHooks()
+          .colors()
+          .datasets([{type: 'line', fill: false, borderColor: 'green'}, 'bar'])
+        });
+
+      </script>
+      <script>
+      function getNewData(){
+        $val = $('#code').val();
+
+        const stokedatachart = new Chartisan({
+          el: '#chart',
+          url: "@chart('stoke_data_chart')"+"?trade_code="+$val,
+          hooks: new ChartisanHooks()
+          .colors()
+          .datasets([{type: 'line', fill: false, borderColor: 'green'}, 'bar'])
+        });
+      }
+      </script>
+    @endpush
+  </div>
+</section>
+
+
   <div class="text-center">
     <a href="{!! route('create') !!}" class="btn btn-success">Create New Record</a>
   </div>

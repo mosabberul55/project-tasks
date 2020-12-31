@@ -12,7 +12,7 @@
           @csrf
           <div class="form-group">
             <label for="file">Choose csv form public folder</label>
-            <small class="d-block mb-3 text-primary">This may take 40-100 second. please don't close. After the import it will automitacally redirect You to the home page.</small>
+            <small class="d-block mb-3 text-primary">This may take 40-100 seconds. please don't close. After the import, it will automatically redirect You to the home page.</small>
             <input type="file" name="file" class="form-control">
           </div>
           <input type="submit" name="" value="Submit" class="btn btn-primary">
@@ -20,7 +20,7 @@
       </div>
     </div>
     <div class="mt-3 pt-2">
-      <p class="text-success">If you Import once don't need to import. Just go to the home page directly.</p>
+      <p class="text-success">If you import once you don't need to import. Just go to the home page directly.</p>
       <a href="{!! route('index') !!}" class="btn btn-success">Home Page</a>
     </div>
   </div>

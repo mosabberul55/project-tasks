@@ -19,7 +19,7 @@ class StokeDataChart extends BaseChart
     public function handler(Request $request): Chartisan
     {
       $stk = new StokeDataController();
-      $data = $stk->test($request->trade_code);
+      $data = $stk->chart($request->trade_code);
       //  $products = StockeData::all();
         return Chartisan::build()
             ->labels($data['date'])
